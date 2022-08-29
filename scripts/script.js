@@ -47,10 +47,26 @@ const alphabet = [
 
 alphabet.map((el) => {
   const letter = document.createElement('button')
+  letter.setAttribute('class', 'letter')
   letter.setAttribute('id', el)
   letter.innerHTML = el
   document.body.append(letter)
 })
 
-// console.log('TEST: ', document.querySelector('#a').id)
+const startGame = () => {
+  const p = document.createElement('p')
+  p.innerHTML = storageArray[0].question
+  document.body.append(p)
 
+  checkUserAnswers(storageArray[0].correctAnswer)
+}
+
+const checkUserAnswers = (correct) => {
+  document.querySelectorAll('.letter').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault()
+      if ()
+      console.log(e.target.id)
+    })
+  })
+}
